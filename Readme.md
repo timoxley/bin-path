@@ -5,6 +5,8 @@ Get paths to module executables.
 ## Example
 
 ```js
+var binPath = require('bin-path')
+
 binPath('tape', function(err, bin) {
   if (err) return console.error(err)
   console.log(bin)
