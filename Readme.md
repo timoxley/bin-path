@@ -27,6 +27,8 @@ into account being called within the context of another module, this is
 a problem because:
 2. You can't rely on `__dirname + '/node_modules/'` actually containing your
 module, the module may exist higher in the hierarchy due to deduping.
+If the module does exist higher, then `node_modules/.bin` will also be
+missing for your module.
 3. Shelling out to `npm bin` is slow anyway; it has to wait for all of
   npm to boot up, and npm is a heavy dependency to include if all you
 want is to get a bin path.
