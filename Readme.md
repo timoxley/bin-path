@@ -2,7 +2,7 @@
 
 Get paths to module executables.
 
-## Example
+## Usage
 
 ```js
 var binPath = require('bin-path')
