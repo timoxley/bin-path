@@ -5,7 +5,8 @@ Get paths to module executables.
 ## Usage
 
 ```js
-var binPath = require('bin-path')
+// pass in require so we can resolve relative to the calling module.
+var binPath = require('bin-path')(require)
 
 binPath('tape', function(err, bin) {
   if (err) return console.error(err)

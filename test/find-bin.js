@@ -1,7 +1,7 @@
 "use strict"
 
 var test = require('tape')
-var binPath = require('../')
+var binPath = require('../')(require)
 var normalize = require('path').normalize
 
 test('sync finding object bins for a package', function(t) {

@@ -4,19 +4,24 @@ var fs = require('fs')
 var path = require('path')
 var join = path.join
 
-module.exports = function(pkg, fn) {
-  if (!fn) return module.exports.sync(pkg)
-  var dir = path.dirname(require.resolve(pkg))
-  fs.readFile(join(dir, 'package.json'), {encoding: 'utf8'} , function(err, pkgContent) {
-    if (err) return fn(err)
-    return fn(null, parseBin(dir, pkgContent.toString()))
-  })
-}
+module.exports = function(parentRequire) {
+  function binPath(pkg, fn) {
+    if (!fn) return binPathSync(pkg)
+    var dir = path.dirname(parentRequire.resolve(pkg))
+    fs.readFile(join(dir, 'package.json'), {encoding: 'utf8'} , function(err, pkgContent) {
+      if (err) return fn(err)
+        return fn(null, parseBin(dir, pkgContent.toString()))
+    })
+  }
 
-module.exports.sync = function(pkg) {
-  var dir = path.dirname(require.resolve(pkg))
-  var pkgContent = fs.readFileSync(join(dir, 'package.json'))
-  return parseBin(dir, pkgContent.toString())
+  function binPathSync(pkg) {
+    var dir = path.dirname(parentRequire.resolve(pkg))
+    var pkgContent = fs.readFileSync(join(dir, 'package.json'))
+    return parseBin(dir, pkgContent.toString())
+  }
+
+  binPath.sync = binPathSync
+  return binPath
 }
 
 function parseBin(dir, pkgContent) {
