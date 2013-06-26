@@ -1,0 +1,28 @@
+{
+  "name": "bin-path",
+  "version": "0.0.0",
+  "description": "Get the path(s) to an module's executable(s).",
+  "main": "index.js",
+  "scripts": {
+    "test": "set -e; for t in test/*.js; do node $t; done"
+  },
+  "author": "Tim Oxley",
+  "license": "MIT",
+  "devDependencies": {
+    "tape": "1.0.4",
+    "rimraf": "2.2.0"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "keywords": [
+    "path",
+    "bin",
+    "modules",
+    "npm",
+    "executable",
+    "exec",
+    "spawn"
+  ]
+}
