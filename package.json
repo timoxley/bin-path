@@ -1,7 +1,7 @@
 {
   "name": "bin-path",
   "version": "0.0.0",
-  "description": "Get the path(s) to an module's executable(s).",
+  "description": "Get paths to module executables",
   "main": "index.js",
   "scripts": {
     "test": "set -e; for t in test/*.js; do node $t; done"

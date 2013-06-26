@@ -1,6 +1,6 @@
 # bin-path
 
-Get the path(s) to an module's executable(s).
+Get paths to module executables.
 
 ## Example
 
