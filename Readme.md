@@ -1,6 +1,8 @@
 # bin-path
 
-Get paths to module executables.
+[![Build Status](https://travis-ci.org/timoxley/bin-path.png?branch=master)](https://travis-ci.org/timoxley/bin-path)
+
+`bin-path` gives you absolute paths to dependee modules' executable scripts
 
 ## Usage
 
@@ -21,7 +23,7 @@ binPath('tape', function(err, bin) {
 
 ```
 
-## I've got, um, 4 Problems, and `npm bin` is one.
+## Why
 
 1. `npm bin` will return the location of the `node_modules/.bin` directory, but it does not take
 into account being called within the context of another module, this is
@@ -38,10 +40,16 @@ the `bin` field in `package.json` allows module authors to change the path ofthe
 without breaking dependee modules. Finding the actual path to the executable is also a problem because of
 point 2 above.
 
-## Solution
-
-`bin-path` resolves the module's location, and loads `bin` 
+## How
+`bin-path` resolves module location, and loads `bin` 
 from `package.json` directly, resolving to normalized, absolute paths.
+
+## Alternative Solution
+
+Invoke your modules via npm scripts (e.g. npm start), this will set up the `$PATH` to find 
+executables correctly. This still incurs the startup time of npm though, and isn't always
+practical, for example, npm scripts cannot accept commandline parameters (though you can use
+environment variables largely for the same purpose).
 
 ## Licence
 
