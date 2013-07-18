@@ -1,6 +1,6 @@
 {
   "name": "bin-path",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Get paths to module executables",
   "main": "index.js",
   "scripts": {
