@@ -4,13 +4,14 @@
   "description": "Get paths to module executables",
   "main": "index.js",
   "scripts": {
-    "test": "set -e; for t in test/*.js; do node $t; done"
+    "test": "faucet"
   },
   "author": "Tim Oxley",
   "license": "MIT",
   "devDependencies": {
-    "tape": "1.0.4",
-    "rimraf": "2.2.0"
+    "faucet": "0.0.1",
+    "rimraf": "2.2.0",
+    "tape": "1.0.4"
   },
   "directories": {
     "test": "test"
