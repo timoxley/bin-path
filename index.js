@@ -33,7 +33,7 @@ function parseBin(dir, pkgContent) {
   var bin = pkgData.bin
   if (typeof bin === 'string') {
     var result = {}
-    result[pkgData.name] = path.normalize(join(dir, bin[key]))
+    result[pkgData.name] = path.normalize(join(dir, bin))
     return result
   }
   else if (typeof bin === 'object') {
