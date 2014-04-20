@@ -10,7 +10,7 @@ module.exports = function(parentRequire) {
     var dir = path.dirname(parentRequire.resolve(pkg))
     fs.readFile(join(dir, 'package.json'), {encoding: 'utf8'} , function(err, pkgContent) {
       if (err) return fn(err)
-        return fn(null, parseBin(dir, pkgContent.toString()))
+      return fn(null, parseBin(dir, pkgContent.toString()))
     })
   }
 
