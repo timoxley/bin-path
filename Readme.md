@@ -2,7 +2,13 @@
 
 [![Build Status](https://travis-ci.org/timoxley/bin-path.png?branch=master)](https://travis-ci.org/timoxley/bin-path)
 
-`bin-path` gives you absolute paths to dependee modules' executable scripts
+`bin-path` gives you absolute paths to dependee modules' executable scripts.
+
+## Deprecated
+
+This module's approach does not work for modules that do not have a 'main' in their package.json.
+
+This is fixed in [timoxley/npm-which](https://github.com/timoxley/npm-which) which duplicates npm's PATH setting machinery.
 
 ## Usage
 
